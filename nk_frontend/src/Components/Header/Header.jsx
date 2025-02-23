@@ -1,36 +1,56 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React from "react";
+import "./header.css";
+import nextkey from "../../assets/nextkey.png"; // Ensure this path is correct
 
 function Header() {
   return (
-    <Navbar expand="md" fixed='top' className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">
-        NK_Communications
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/aboutUs">About Us</Nav.Link>
+    <nav className="navbar navbar-expand-sm fixed-top">
+      <div className="container">
+        {/* Logo */}
+        <a className="navbar-brand" href="/">
+          <img
+            src={nextkey}
+            alt="NK Communications Logo"
+            className="img-fluid"
+            style={{ width: "140px", height: "auto", borderRadius: "10px" }}
+          />
+        </a>
 
-            <NavDropdown title="Other" id="basic-nav-dropdown">
-              <Nav.Link href="/clients">Clients</Nav.Link>
-              <Nav.Link href="#action/3.2">
-                Team
-              </Nav.Link>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-          
-            </NavDropdown>
-            <Nav.Link href="/contactus">Contact Us</Nav.Link>
+        {/* Mobile Toggle Button */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        {/* Navbar Links */}
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link text-white fw-bold px-3" href="/">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-black fw-bold px-3" href="/aboutUs">About Us</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-black fw-bold px-3" href="/services">Services</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-black fw-bold px-3" href="/clients">Clients</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-warning fw-bold px-3" href="/contactus">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
 

@@ -1,0 +1,29 @@
+/* Custom Bootstrap Overrides */
+.bg-black {
+    background-color: #000000 !important;
+  }
+  
+  .bg-dark-blue {
+    background-color: #003479 !important;
+  }
+  
+  .text-sky-blue {
+    color: #00c2cb !important;
+  }
+  
+  .text-primary-custom {
+    color: #00c2cb !important;
+  }
+  
+  .card {
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  /* .carousel-container{
+    height: ;
+  } */
