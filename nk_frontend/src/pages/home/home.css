@@ -27,3 +27,20 @@
   /* .carousel-container{
     height: ;
   } */
+
+  .custom-card {
+    background: linear-gradient(135deg, #003479, #000000);
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .text-sky-blue {
+    color: #00c2cb;
+  }
+  

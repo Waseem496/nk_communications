@@ -1,102 +1,100 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import './contact.css'
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
+  const [status, setStatus] = useState("");
 
+  // Handle form changes
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Replace with the Google Form action URL
-    const formActionUrl = "https://docs.google.com/forms/d/e/18p6jhZ7fmfZpRZMMOqmkVO3bQezuHmH9vcNyg-3rLtE/formResponse";
-
-    const data = new URLSearchParams();
-    data.append('entry.name', formData.name);  // Replace 'entry.name' with the actual field name from the form
-    data.append('entry.email', formData.email);  // Replace 'entry.email' with the actual field name
-    data.append('entry.message', formData.message);  // Replace 'entry.message' with the actual field name
+    setStatus("Sending...");
 
     try {
-      const response = await fetch(formActionUrl, {
+      const response = await fetch("http://localhost:5000/send-email", {
         method: "POST",
-        body: data,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        mode: 'no-cors'  // Adding this to bypass CORS restrictions
-
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
-        setFormData({ name: '', email: '', message: '' });  // Clear the form fields
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
       } else {
-        alert("Error submitting form.");
+        setStatus("Failed to send message. Try again.");
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Error submitting form.");
+      setStatus("Error sending message. Please try again.");
     }
   };
 
   return (
-    <div>
-      <div className="contact-form" style={{margin: "100px"}}>
-        <h2>Contact Us</h2>
-        <form className="contactForm" onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">Full Name</label>
+    <div  className="contact-container">
+         <h4 className="text-center text-info fw-bold">Next Key Communications</h4>
+        <p className="text-center fst-italic">
+          Drop us a note, a query, or just a hello. We’re happy to hear from you!
+        </p>
+      <div className="col-md-4 text-center">
+        <h5 className="text-primary">CONNECT WITH US</h5>
+        {status && <p className="alert alert-info p-2">{status}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-2">
             <input
               type="text"
-              className="form-control"
-              id="name"
+              className="form-control bg-secondary text-white"
+              placeholder="Your Name"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
-
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Your Email</label>
+          <div className="mb-2">
             <input
               type="email"
-              className="form-control"
-              id="email"
+              className="form-control bg-secondary text-white"
+              placeholder="E-Mail Address"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
             />
           </div>
-
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">Your Message</label>
+          <div className="mb-2">
+            <input
+              type="tel"
+              className="form-control bg-secondary text-white"
+              placeholder="Phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-2">
             <textarea
-              className="form-control"
-              id="message"
+              className="form-control bg-secondary text-white"
+              placeholder="Message"
               name="message"
-              rows="4"
+              rows="3"
               value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
           </div>
-
-          <button type="submit" className="btn btn-primary">Send Message</button>
+          <button type="submit" className="btn btn-primary w-100 fw-bold">
+            Submit
+          </button>
         </form>
       </div>
-    
     </div>
   );
 };

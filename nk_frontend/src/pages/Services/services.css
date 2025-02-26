@@ -1,0 +1,41 @@
+/* services.css */
+.container-services {
+    background-color: #f8f9fa;
+    margin-top: 6%;
+  }
+  
+  .services-title {
+    color: #003479;
+    font-weight: bold;
+  }
+  
+  .services-text {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    /* color: white; */
+    color: linear-gradient(135deg, #003479, #00c2cb, #000000);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  }
+  
+  .service-card {
+    background: linear-gradient(135deg, #003479, #00c2cb, #000000);
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  

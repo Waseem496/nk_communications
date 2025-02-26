@@ -1,7 +1,18 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import { FaBullhorn, FaChalkboardTeacher, FaNewspaper, FaUsers, FaStar, FaHandshake, FaShieldAlt, FaGlobe, FaCalendarAlt } from "react-icons/fa";
+import {
+  FaBullhorn,
+  FaChalkboardTeacher,
+  FaNewspaper,
+  FaUsers,
+  FaStar,
+  FaHandshake,
+  FaShieldAlt,
+  FaGlobe,
+  FaCalendarAlt
+} from "react-icons/fa";
+import './services.css';
 
 const services = [
   { icon: <FaBullhorn />, title: "Product Launches", description: "Seamlessly executed campaigns to generate buzz and drive consumer interest." },
@@ -17,35 +28,20 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="container py-5">
-      <h2 className="text-center" style={{ color: "#003479" }}>Our Services</h2>
-      <p className="text-center text-white">
-        At Nk Communications, we craft powerful PR and communication strategies that amplify your brand’s presence and credibility.
+    <div className="container-services py-5">
+      <h2 className="text-center services-title">Our Services</h2>
+      <p className="text-center services-text">
+        At NK Communications, we craft powerful PR and communication strategies that amplify your brand’s presence and credibility.
       </p>
 
       <Row className="mt-4">
         {services.map((service, index) => (
           <Col md={4} className="mb-4" key={index}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card
-                className="shadow"
-                style={{
-                  backgroundColor: index % 2 === 0 ? "#00c2cb" : "#003479",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: "12px"
-                }}
-              >
-                <Card.Body className="text-center">
-                  <div style={{ fontSize: "2rem", marginBottom: "10px" }}>
-                    {service.icon}
-                  </div>
-                  <Card.Title style={{ fontWeight: "bold" }}>{service.title}</Card.Title>
-                  <Card.Text>{service.description}</Card.Text>
-                </Card.Body>
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+              <Card className="service-card p-4">
+                <div className="service-icon">{service.icon}</div>
+                <Card.Title style={{ fontWeight: "bold" }}>{service.title}</Card.Title>
+                <Card.Text>{service.description}</Card.Text>
               </Card>
             </motion.div>
           </Col>

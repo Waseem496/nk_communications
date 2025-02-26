@@ -1,8 +1,14 @@
 import React from "react";
+import pic1 from '../assets/Untitled design/pic1.avif'
+import pic2 from '../assets/Untitled design/pic2.png'
+import pic3 from '../assets/Untitled design/pic3.png'
+import pic4 from '../assets/Untitled design/pic4.png'
+import pic5 from '../assets/Untitled design/pic5.png'
+import pic6 from '../assets/Untitled design/pic6.jpeg'
 
 const slidesData = [
   {
-    image: "https://img.freepik.com/free-photo/man-jump-through-gap-hill-man-jumping-cliff-blue-sky-business-concept-idea_1323-185.jpg?w=740",
+    image: pic1,
     title: "Building Reputations, Amplifying Brands",
     description: "NK Communications PR specializes in media relations, corporate communications, and digital PR to elevate your brand's presence.",
     // link: "/contact",
@@ -10,7 +16,7 @@ const slidesData = [
     interval: 1000,
   },
   {
-    image: "https://img.freepik.com/free-photo/corporate-management-strategy-solution-branding-concept_53876-167088.jpg?t=st=1739682714~exp=1739686314~hmac=47c561ad86df65c9d17f73b22668009976edb725d99c08ca2359e4aa60ac94c1&w=740",
+    image: pic2,
     title: "Expert PR & Media Strategies",
     description: "Tailored solutions to ensure your brand gets the right exposure.",
     // link: "/services",
@@ -18,13 +24,39 @@ const slidesData = [
     interval: 2000,
   },
   {
-    image: "https://img.freepik.com/free-vector/vector-live-report-concept-live-news-hands-journalists-with-microphones-tape-recorders_1284-42127.jpg?t=st=1739682944~exp=1739686544~hmac=0541bf780b838a9cc4f16922a28dc5c8eaeb0f3baaa479035931c2c53a728d36&w=740",
+    image: pic3,
     title: "Grow Your Brand with Us",
     description: "From press releases to digital campaigns, we craft compelling stories.",
     // link: "/about",
     buttonText: "Learn More",
     interval: 3000,
   },
+  {
+    image: pic4,
+    title: "Grow Your Brand with Us",
+    description: "From press releases to digital campaigns, we craft compelling stories.",
+    // link: "/about",
+    buttonText: "Learn More",
+    interval: 3000,
+  }
+  ,
+  {
+    image: pic5,
+    title: "Grow Your Brand with Us",
+    description: "From press releases to digital campaigns, we craft compelling stories.",
+    // link: "/about",
+    buttonText: "Learn More",
+    interval: 3000,
+  }
+  ,
+  {
+    image: pic6,
+    title: "Grow Your Brand with Us",
+    description: "From press releases to digital campaigns, we craft compelling stories.",
+    // link: "/about",
+    buttonText: "Learn More",
+    interval: 3000,
+  }
 ];
 export default function CarouselComponent() {
   return (

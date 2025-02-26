@@ -118,7 +118,7 @@ export default function Footer() {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-warning w-100 fw-bold">
+              <button type="submit" className="btn btn-primary w-100 fw-bold">
                 Submit
               </button>
             </form>
@@ -130,7 +130,7 @@ export default function Footer() {
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div className="text-center text-md-start mb-3 mb-md-0">
             <button className="btn btn-link text-info">nkcommunications18@gmail.com</button>
-            <button className="btn btn-link text-info">+91-98746321</button>
+            <button className="btn btn-link text-info">+91-9848343882, +91-6303093338</button>
           </div>
           <div className="social-icons">
             <a href="#" className="btn btn-outline-primary me-2">

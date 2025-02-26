@@ -1,67 +1,149 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Image, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
+import "./about.css";
+import strategicPR from "../../assets/strategicPR.png";
+import brandawareness from "../../assets/brandawareness.png";
+import mediacoverage from "../../assets/mediacoverage.png";
 
-export default function AboutUs() {
+import digitalPR from "../../assets/digitalPR.png";
+import corporatePR from "../../assets/corporatePR.png";
+
+import mediarelation from "../../assets/mediarelation.png";
+
+const AboutUs = () => {
   return (
-    <div style={{ backgroundColor: "#00c2cb", color: "#000000" }}>
-      <Container className="py-5">
-        <h2 className="text-center" style={{ color: "#003479", fontWeight: "bold" }}>About Us</h2>
-        <p className="text-center" style={{ fontSize: "18px", maxWidth: "800px", margin: "0 auto" }}>
-          NK Communications is a premier PR and communications firm, specializing in **strategic brand visibility, press coverage, event management, and celebrity interactions**.
-          With a strong presence across India, we help businesses build credibility, amplify their voice, and leave a lasting impact.
-        </p>
-
-        <Card className="p-4 shadow-sm mt-4" style={{ border: "none", backgroundColor: "#003479", borderRadius: "10px" }}>
-          <p style={{ color: "#ffffff", fontSize: "17px", textAlign: "center" }}>
-            Whether it's launching a new product, handling crisis communication, or creating high-impact media strategies,  
-            **we ensure your brand gets the recognition it truly deserves**. Our expertise lies in crafting powerful narratives  
-            that position brands as industry leaders.
+    <div className="about-section">
+      {/* About Us Section */}
+      <Container fluid className="py-5 bg-dark-blue">
+        <Container>
+          <h2 className="about-title text-center text-sky-blue">About Us</h2>
+          <p className="about-text text-center text-white">
+            <strong>NK Communications</strong> is a premier PR and
+            communications firm with <strong>19 years of experience</strong>,
+            specializing in{" "}
+            <strong>
+              strategic brand visibility, press coverage, event management, and
+              celebrity interactions
+            </strong>
+            . We have a strong presence across India, helping businesses build
+            credibility, amplify their voice, and leave a lasting impact.
           </p>
-        </Card>
+        </Container>
       </Container>
 
       {/* Why Choose Us Section */}
-      <Container className="py-5">
-        <h2 className="text-center" style={{ color: "#003479", fontWeight: "bold" }}>Why Choose NK Communications?</h2>
-        <Row className="mt-4">
-          {[
-            { title: "Strategic PR Solutions", text: "Custom PR strategies to position your brand effectively in the market." },
-            { title: "Top-Tier Media Coverage", text: "Connections with leading publications to maximize brand visibility." },
-            { title: "High-Impact Brand Campaigns", text: "From press conferences to influencer collaborations, we create impactful campaigns." },
-          ].map((item, index) => (
-            <Col md={4} key={index} className="mb-4">
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                <Card className="p-4 shadow-sm text-center" style={{ borderRadius: "10px", backgroundColor: "#ffffff", border: "2px solid #003479" }}>
-                  <h4 style={{ color: "#003479", fontWeight: "bold" }}>{item.title}</h4>
-                  <p style={{ color: "#000000" }}>{item.text}</p>
-                </Card>
+      <Container className="py-5 mt-2 bg-dark-blue">
+        <h2 className="about-title text-center text-dark-blue">
+          Why Choose NK Communications?
+        </h2>
+        {[
+          {
+            title: "Strategic PR Solutions",
+            text: "Custom PR strategies to position your brand effectively in the market.",
+            image: strategicPR,
+          },
+          {
+            title: "Top-Tier Media Coverage",
+            text: "Connections with leading publications to maximize brand visibility.",
+            image: mediacoverage,
+          },
+          {
+            title: "High-Impact Brand Campaigns",
+            text: "From press conferences to influencer collaborations, we create impactful campaigns.",
+            image: brandawareness,
+          },
+        ].map((item, index) => (
+          <Row className="align-items-center my-4" key={index}>
+            <Col
+              md={6}
+              className={index % 2 === 0 ? "order-md-1" : "order-md-2"}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="feature-image"
+                />
               </motion.div>
             </Col>
-          ))}
-        </Row>
+            <Col
+              md={6}
+              className={index % 2 === 0 ? "order-md-2" : "order-md-1"}
+            >
+              <Card className="feature-card text-white p-4">
+                <h4 className="text-white">{item.title}</h4>
+                <p>{item.text}</p>
+              </Card>
+            </Col>
+          </Row>
+        ))}
       </Container>
 
       {/* Our Work Section */}
-      <Container className="py-5">
-        <h2 className="text-center" style={{ color: "#003479", fontWeight: "bold" }}>Our Work</h2>
-        <Row className="mt-4">
-          {[
-            { title: "Media Relations", text: "Connecting brands with top-tier media outlets to maximize visibility." },
-            { title: "Corporate PR", text: "Creating strong corporate narratives to enhance reputation." },
-            { title: "Digital PR", text: "Leveraging social and digital platforms for impactful communication." },
-          ].map((item, index) => (
-            <Col md={4} key={index} className="mb-4">
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                <Card className="p-4 shadow-sm text-center" style={{ borderRadius: "10px", backgroundColor: "#ffffff", border: "2px solid #003479" }}>
-                  <h4 style={{ color: "#003479", fontWeight: "bold" }}>{item.title}</h4>
-                  <p style={{ color: "#000000" }}>{item.text}</p>
-                </Card>
+      <Container className="py-5 bg-dark-blue">
+        <h2 className="about-title text-center text-sky-blue">Our Work</h2>
+        {[
+          {
+            title: "Media Relations",
+            text: "Connecting brands with top-tier media outlets to maximize visibility.",
+            image: mediarelation,
+          },
+          {
+            title: "Corporate PR",
+            text: "Creating strong corporate narratives to enhance reputation.",
+            image: corporatePR,
+          },
+          {
+            title: "Digital PR",
+            text: "Leveraging social and digital platforms for impactful communication.",
+            image: digitalPR,
+          },
+        ].map((item, index) => (
+          <Row className="align-items-center my-4" key={index}>
+            <Col
+              md={6}
+              className={index % 2 === 0 ? "order-md-1" : "order-md-2"}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="feature-image"
+                />
               </motion.div>
             </Col>
-          ))}
-        </Row>
+            <Col
+              md={6}
+              className={index % 2 === 0 ? "order-md-2" : "order-md-1"}
+            >
+              <Card className="feature-card text-white p-4">
+                <h4 className="text-white">{item.title}</h4>
+                <p>{item.text}</p>
+              </Card>
+            </Col>
+          </Row>
+        ))}
+      </Container>
+
+      {/* Download Button */}
+      <Container className="py-5 text-center">
+        <Button
+          href="/assets/NK_Communications_Profile.pdf"
+          download
+          className="btn-download"
+        >
+          Download Profile
+        </Button>
       </Container>
     </div>
   );
-}
+};
+
+export default AboutUs;
