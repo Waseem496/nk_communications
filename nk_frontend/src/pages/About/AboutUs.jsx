@@ -84,7 +84,7 @@ const AboutUs = () => {
       </Container>
 
       {/* Our Work Section */}
-      <Container className="py-5 bg-dark-blue">
+      <Container className="py-5 mt-3 bg-dark-blue">
         <h2 className="about-title text-center text-sky-blue">Our Work</h2>
         {[
           {
@@ -130,17 +130,6 @@ const AboutUs = () => {
             </Col>
           </Row>
         ))}
-      </Container>
-
-      {/* Download Button */}
-      <Container className="py-5 text-center">
-        <Button
-          href="/assets/NK_Communications_Profile.pdf"
-          download
-          className="btn-download"
-        >
-          Download Profile
-        </Button>
       </Container>
     </div>
   );

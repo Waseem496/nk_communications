@@ -42,9 +42,12 @@ export default function Footer() {
     <footer className="bg-dark text-white py-5">
       <div className="container">
         {/* Heading */}
-        <h4 className="text-center text-info fw-bold">Next Key Communications & Consulting P Ltd</h4>
+        <h4 className="text-center text-info fw-bold">
+          Next Key Communications & Consulting P Ltd
+        </h4>
         <p className="text-center fst-italic">
-          Drop us a note, a query, or just a hello. We’re happy to hear from you!
+          Drop us a note, a query, or just a hello. We’re happy to hear from
+          you!
         </p>
 
         <div className="row mt-4">
@@ -61,11 +64,11 @@ export default function Footer() {
           <div className="col-md-4">
             <iframe
               title="map"
-              src="https://www.google.com/maps/embed?pb=!1m18..."
+              src="https://www.google.com/maps?q=17.410141981491524,78.50404046787123&hl=en&z=15&output=embed"
               width="100%"
-              height="200"
-              style={{ borderRadius: "10px", border: 0 }}
-              allowFullScreen=""
+              height="300"
+              style={{ borderRadius: "10px", border: "0" }}
+              allowFullScreen
               loading="lazy"
             ></iframe>
           </div>
@@ -129,18 +132,28 @@ export default function Footer() {
         <hr className="border-light" />
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div className="text-center text-md-start mb-3 mb-md-0">
-            <button className="btn btn-link text-info">nkcommunications18@gmail.com</button>
-            <button className="btn btn-link text-info">+91-9848343882, +91-6303093338</button>
+            <button className="btn btn-link text-info">
+              nkcommunications18@gmail.com
+            </button>
+            <button className="btn btn-link text-info">
+              +91-9848343882, +91-6303093338
+            </button>
           </div>
           <div className="social-icons">
             <a href="#" className="btn btn-outline-primary me-2">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#" className="btn btn-outline-danger me-2">
+            <a
+              href="https://www.instagram.com/nkcommunications18?igsh=MWx3Z3BjMGdvcGpuaA%3D%3D&utm_source=qr"
+              className="btn btn-outline-danger me-2"
+            >
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="#" className="btn btn-outline-info">
-            <i className="bi bi-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/company/next-key-communications/"
+              className="btn btn-outline-info"
+            >
+              <i className="bi bi-linkedin"></i>
             </a>
           </div>
         </div>

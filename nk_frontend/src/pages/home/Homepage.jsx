@@ -1,5 +1,5 @@
 import "./home.css";
-import CarouselComponent from "../../Components/Carousel";
+import CarouselComponent from "../../Components/carousel/Carousel";
 import { Container} from "react-bootstrap";
 
 import Footer from "../../Components/Footer/footer";

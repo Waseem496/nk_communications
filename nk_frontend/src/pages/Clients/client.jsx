@@ -1,33 +1,58 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
+import './client.css'
+import kamineni from '../../assets/logos/kamineni.png'
+import pace from '../../assets/logos/pace.jpeg'
+import cipla from '../../assets/logos/cipla.png'
+import gmr from '../../assets/logos/GMR.webp'
+import grtjewellers from '../../assets/logos/grtjewellers.png'
+import spencers from '../../assets/logos/spencers.jpeg'
+import barbequenation from '../../assets/logos/barbequenation.png'
+import futuregroup from '../../assets/logos/futuregroup.png'
+import meridian from '../../assets/logos/meridian.png'
+import mahindrauniversity from '../../assets/logos/mahindrauniversity.png'
+import mahindra from '../../assets/logos/mahindra.png'
+import buttagroup from '../../assets/logos/buttagroup.jpg'
+import iocl from '../../assets/logos/iocl.png'
+import HGC from '../../assets/logos/HGC.png'
+import witeandgold from '../../assets/logos/witeandgold.png'
+
+
 
 const clients = [
   {
     category: "Healthcare",
     brands: [
-      { name: "Kamineni Hospitals", logo: "/logos/kamineni.png" },
-      { name: "Pace Hospitals", logo: "/logos/pace.png" },
+      { name: "Kamineni Hospitals", logo: kamineni },
+      { name: "Pace Hospitals", logo: pace },
       { name: "Lotus Hospitals", logo: "/logos/lotus.png" },
+      { name: "Cipla Hospitals", logo: cipla },
     ],
   },
   {
     category: "Retail & Lifestyle",
     brands: [
-      { name: "GMR Groups", logo: "/logos/gmr.png" },
-      { name: "GRT Jewelers", logo: "/logos/grt.png" },
-      { name: "White & Gold", logo: "/logos/whitegold.png" },
-      { name: "Spencer’s Hyper Market", logo: "/logos/spencers.png" },
-      { name: "Future Group", logo: "/logos/futuregroup.png" },
+      { name: "GMR Groups", logo: gmr},
+      { name: "GRT Jewelers", logo: grtjewellers},
+      { name: "Wite & Gold", logo: witeandgold },
+      { name: "Spencer’s Hyper Market", logo: spencers },
+      { name: "Future Group", logo: futuregroup},
+      { name: "Barbeque Nation", logo: barbequenation },
+      { name: "Indian Oil Corporation Limited", logo: iocl }
     ],
   },
   {
     category: "Education",
-    brands: [{ name: "Meridian School", logo: "/logos/meridian.png" }],
+    brands: [{ name: "Meridian School", logo: meridian},
+      { name: "Mahindra Univeristy", logo: mahindrauniversity}
+    ],
   },
   {
     category: "Corporate & Business",
-    brands: [{ name: "Butta Groups", logo: "/logos/butta.png" }],
+    brands: [{ name: "Butta Groups", logo: buttagroup},
+      { name: "Mahindra", logo: mahindra}
+    ],
   },
   {
     category: "Automobile",
@@ -35,13 +60,13 @@ const clients = [
   },
   {
     category: "Sports & Leisure",
-    brands: [{ name: "Hyderabad Golf Club", logo: "/logos/hydgolf.png" }],
+    brands: [{ name: "Hyderabad Golf Club", logo: HGC}],
   },
 ];
 
 export default function Clients() {
   return (
-    <Container className="py-5">
+    <Container className="py-5 client-container">
       <h2 className="text-center" style={{ color: "#003479" }}>Our Esteemed Clients</h2>
       <p className="text-center text-muted">
         Over the years, Nk Communications has partnered with leading brands across various industries, delivering exceptional PR and communication solutions.

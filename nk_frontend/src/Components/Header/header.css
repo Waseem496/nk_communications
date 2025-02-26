@@ -1,15 +1,27 @@
-.nav{
-  background-color: rgba(13, 110, 253, 0.25);
-  height:30px ;
+/* Navbar default */
+.navbar {
+  transition: all 0.3s ease-in-out;
+  padding: 20px 0; /* Adjust initial padding */
 }
-.navbar-nav .nav-link {
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #00c2cb !important;
-  }
-  /* Hide carousel arrows by default */
+
+/* When navbar is scrolled */
+.navbar-scrolled {
+  background-color: #f8f9fa !important;
+  padding: 8px 0; /* Reduce height when scrolling */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo default size */
+.logo {
+  width: 160px;
+  height: auto;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Smaller logo on scroll */
+.logo-small {
+  width: 100px; /* Reduce logo size */
+}
 .carousel-control-prev,
 .carousel-control-next {
   opacity: 0;

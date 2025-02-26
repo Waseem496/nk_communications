@@ -1,0 +1,26 @@
+.carousel-item {
+    position: relative;
+  }
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+  /* Ensure images take full height */
+  .carousel-image {
+    max-height: 80vh;
+    object-fit: cover;
+  }
+  
