@@ -1,0 +1,20 @@
+{
+  "name": "nk_communications",
+  "version": "1.0.0",
+  "description": "NK Communications is a premier PR and communications firm with 19 years of experience, specializing in strategic brand visibility, press coverage, event management, and celebrity interactions. We have a strong presence across India, helping businesses build credibility, amplify their voice, and leave a lasting impact.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Waseem496/nk_communications.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Waseem496/nk_communications/issues"
+  },
+  "homepage": "https://github.com/Waseem496/nk_communications#readme"
+}
