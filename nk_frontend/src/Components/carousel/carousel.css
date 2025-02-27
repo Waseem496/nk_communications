@@ -9,18 +9,56 @@
     width: 60%;
   }
   
-  .carousel-caption h1 {
+  /* .carousel-caption h1 {
     font-size: 2rem;
     font-weight: bold;
   }
   
   .carousel-caption p {
     font-size: 1.2rem;
-  }
+  } */
   
   /* Ensure images take full height */
   .carousel-image {
     max-height: 80vh;
     object-fit: cover;
   }
+  .carousel-caption {
+    word-wrap: break-word; /* Ensures text does not overflow */
+    white-space: normal; /* Allows text wrapping */
+    max-width: 90%; /* Prevents text from stretching too much */
+    max-height: 25%;
+    font-size: 14px; /* Adjust font size for better fit on mobile */
+    padding: 10px; /* Adds spacing */
+  }
+
+  @media (max-width: 768px) {
+    .carousel-caption {
+      top: 70%; /* Move caption slightly lower */
+      transform: translate(-50%, -70%);
+      width: 90%;
+      height: 15%;
+    }
   
+    .carousel-caption h1{
+      font-size: 12px; /* Reduce font size for smaller screens */
+    }
+    .carousel-caption p{
+      font-size: 10px; /* Reduce font size for smaller screens */
+    }
+    .carousel-image{
+      height: 500px;
+    }
+  }
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Show arrows when hovering over the carousel */
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 0;
+}

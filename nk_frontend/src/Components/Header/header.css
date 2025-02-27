@@ -1,35 +1,68 @@
-/* Navbar default */
+/* Navbar Default */
 .navbar {
   transition: all 0.3s ease-in-out;
-  padding: 20px 0; /* Adjust initial padding */
+  padding: 15px 0;
+  background-color: transparent;
 }
 
-/* When navbar is scrolled */
+/* When Navbar is Scrolled or Mobile Menu is Open */
 .navbar-scrolled {
-  background-color: #f8f9fa !important;
-  padding: 8px 0; /* Reduce height when scrolling */
+  background-color: #ffffff !important;
+  padding: 10px 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo default size */
+/* Logo Styling */
 .logo {
   width: 160px;
   height: auto;
   transition: width 0.3s ease-in-out;
 }
 
-/* Smaller logo on scroll */
+/* Smaller Logo on Scroll */
 .logo-small {
-  width: 100px; /* Reduce logo size */
-}
-.carousel-control-prev,
-.carousel-control-next {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  width: 100px;
 }
 
-/* Show arrows when hovering over the carousel */
-.carousel:hover .carousel-control-prev,
-.carousel:hover .carousel-control-next {
-  opacity: 0;
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #000 !important;
+  font-weight: 600;
+  padding: 8px 15px;
+  transition: color 0.3s ease-in-out;
 }
+
+/* Mobile Navbar Styling */
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #ffffff !important;
+    padding: 10px 0;
+  }
+
+  .navbar-collapse {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: black !important;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .logo{
+    height: 50px;
+    width: 50px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+}
+
+

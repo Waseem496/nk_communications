@@ -4,19 +4,21 @@ import nextkey from "../../assets/nextkeycommunications.png"; // Ensure this pat
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track menu state
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true); // Apply styles when scrolling
-      } else {
-        setIsScrolled(false); // Reset styles when at top
-      }
+      setIsScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Toggle Navbar on Mobile
+  const handleToggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const handleDownload = () => {
     const pdfPath = "/assets/nk_broucher.pdf"; // Path to the PDF in the public folder
@@ -29,7 +31,7 @@ function Header() {
   };
 
   return (
-    <nav className={`navbar navbar-expand-sm fixed-top ${isScrolled ? "navbar-scrolled" : ""}`}>
+    <nav className={`navbar navbar-expand-sm fixed-top ${isScrolled || isMobileMenuOpen ? "navbar-scrolled" : ""}`}>
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand" href="/">
@@ -44,32 +46,29 @@ function Header() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={handleToggleMenu}
+          aria-expanded={isMobileMenuOpen}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div className={`collapse navbar-collapse justify-content-end ${isMobileMenuOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link text-primary fw-bold px-3" href="/">Home</a>
+              <a className="nav-link" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-blue fw-bold px-3" href="/aboutUs">About Us</a>
+              <a className="nav-link" href="/aboutUs">About Us</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-blue fw-bold px-3" href="/services">Services</a>
+              <a className="nav-link" href="/services">Services</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-blue fw-bold px-3" href="/clients">Clients</a>
+              <a className="nav-link" href="/clients">Clients</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-blue fw-bold px-3" href="/contactus">Contact Us</a>
+              <a className="nav-link" href="/contactus">Contact Us</a>
             </li>
             <li className="nav-item">
               <button type="button" className="btn btn-outline-primary fw-bold px-3" onClick={handleDownload}>
