@@ -1,0 +1,33 @@
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 12%;
+    align-items: center;
+}
+.contactForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50% !important;
+
+}
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+.form-control {
+    border-radius: 8px;
+}
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+.btn-custom:hover {
+    background-color: #0056b3;
+}

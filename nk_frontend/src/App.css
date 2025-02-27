@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box; /* Prevents elements from exceeding their parent width */
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-y: auto; /* Keeps vertical scrolling if needed */
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+   /* Ensures no element overflows horizontally */
+  text-align: center;
+  background-color: #f8faf4ee;
+}
+
+
+.app-container{
+  min-height: 100vh;
+}
